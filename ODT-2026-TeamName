@@ -58,14 +58,14 @@ By the final review, this README should clearly show:
 
 | Name | Primary Role | Secondary Role | Strengths Brought to the Project |
 |---|---|---|---|
-| `[Student 1]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
-| `[Student 2]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
+| `[Yagya Thakur]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
+| `[Ananya Gupta]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
 
 ## 1.3 Project Title
 `[Enter the title of your project]`
 
 ## 1.4 One-Line Pitch
-`[Describe your project in one sentence]`
+`[A fast, fun Rock-Paper-Scissors game where you challenge a smart CPU that keeps you guessing every round.]`
 
 ## 1.5 Expanded Project Idea
 In 1–2 paragraphs, explain:
@@ -75,7 +75,7 @@ In 1–2 paragraphs, explain:
 - what technologies are involved.
 
 **Response:**  
-`[Write here]`
+`[Our project is an interactive Rock–Paper–Scissors game where the player competes against a CPU using a sensor-based glove that converts real hand gestures into in-game moves, creating a playful experience that blends physical action with a digital interface. Instead of clicking buttons, players use natural gestures, making the interaction feel more immersive and intuitive while adding a layer of curiosity and novelty since the glove actively “reads” the hand. This makes the game fun and satisfying through direct control, engaging through its unpredictability, and competitive as the CPU responds dynamically each round. The system is built using Python with Pygame for the interface and NumPy for handling logic, while an ESP32 running MicroPython processes flex sensor data from the glove and connects the physical input to the digital game.]`
 
 ---
 
@@ -101,7 +101,7 @@ Answer the following:
 - Why would someone want to try it again?
 
 **Response:**  
-`[Write here]`
+`[The experience is a tactile, immersive twist on a familiar game, where players feel a direct connection between their physical gestures and the digital outcome. It aims to make the player feel in control, slightly surprised, and engaged, as their hand movements are instantly interpreted by the system, creating a sense of novelty and satisfaction. There’s a playful tension in each round as the CPU responds unpredictably, keeping every match fresh and competitive. It also encourages a social layer, where friends can take turns competing against the CPU to see who can finish with the most lives remaining, adding an expectation of friendly rivalry and a clear goal—winning or earning a small reward—making the experience more engaging and replayable.]`
 
 ## 2.3 Design Persona
 Complete the sentence below:
@@ -109,7 +109,7 @@ Complete the sentence below:
 > We are designing this project as if we are a small creative studio making a **[toy / game / playable object / interactive experience]** for **[children / teens / adults / classmates / exhibition visitors / mixed audience]**.
 
 **Response:**  
-`[Write here]`
+`[We are desiging this project as if we are a small creative studio making a interactive experience for mixed audience]`
 
 ---
 
@@ -120,15 +120,15 @@ List what inspired the project.
 
 | Source Type | Title / Link | What Inspired You |
 |---|---|---|
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
+| `[Board game]` | `[Rock Paper Scissors]` | `[The core idea of simple hand gestures deciding outcomes and fast paced competitive rounds]` |
+| `[App]` | `[Gesture control interfaces]` | `[The idea of replacing button inputs with natural physical movement for a more immersive interaction]` |
+| `[Video]` | `[https://www.youtube.com/watch?v=cRTMHSsvamY]` | `[The idea of using a flex sensor glove to capture finger movements and map them to real time digital inputs, which you adapted to control the game through hand gestures.]` |
 
 ## 3.2 Original Twist
 What makes your project original?
 
 **Response:**  
-`[Write here]`
+`[What makes the project original is the combination of a traditional hand game with real time gesture sensing using a physical glove, turning something everyone knows into an interactive digital experience. Instead of pressing keys, players use actual hand signs that are read by sensors, creating a stronger connection between action and outcome. The addition of a life based system and the expectation of friends competing to beat the CPU with the most lives remaining adds a social and competitive layer, making the experience more engaging and replayable beyond a typical Rock Paper Scissors game.]`
 
 ---
 
@@ -144,37 +144,37 @@ Examples:
 - move object → sensor detects → sound/light response → player reacts
 
 **Response:**  
-`[Write here]`
+`[make gesture → sensors detect → input sent to game → CPU responds → result shown → lives update → repeat until 5 losses → replay or exit]`
 
 ## 4.2 Intended Player / Audience
 
 | Question | Response |
 |---|---|
-| Who is this for? | `[Write here]` |
-| Age range | `[Write here]` |
-| Solo or multiplayer | `[Write here]` |
-| Expected duration of one round | `[Write here]` |
-| What should the player feel? | `[Write here]` |
-| Is explanation required before use? | `[Write here]` |
+| Who is this for? | `[Casual players, students, and anyone interested in interactive or tech based games]` |
+| Age range | `[10 and above]` |
+| Solo or multiplayer | `[Solo with a social competitive element]` |
+| Expected duration of one round | `[1 to 3 minutes]` |
+| What should the player feel? | `[Engaged, curious, competitive, and satisfied through physical interaction]` |
+| Is explanation required before use? | `[Minimal, basic instructions on gestures may be needed]` |
 
 ## 4.3 Player Journey
 Describe exactly how a player will use the project.
 
-1. **Approach:** `[How does the player first encounter it?]`
-2. **Start:** `[How do they begin?]`
-3. **First Action:** `[What do they do first?]`
-4. **Main Interaction:** `[What keeps happening during use?]`
-5. **System Response:** `[How does the project respond?]`
-6. **Win / Lose / End Condition:** `[How does one round end?]`
-7. **Reset:** `[How does the next round begin?]`
+1. **Approach:** `[Player sees the setup with the glove and game running on the laptop]`
+2. **Start:** `[Game begins when the player makes a gesture for rock, paper, or scissors]`
+3. **First Action:** `[Player selects a gesture before the round starts]`
+4. **Main Interaction:** `[Player selects a gesture before each round and competes against the CPU]`
+5. **System Response:** `[Game reads the gesture, compares with CPU choice, and displays the result while updating lives]`
+6. **Win / Lose / End Condition:** `[Game ends when either the player or CPU reaches 5 losses]`
+7. **Reset:** `[Player chooses to replay or exit]`
 
 ## 4.4 Rules of Play
 If your project is a game, list the rules clearly.
 
-- `[Rule 1]`
-- `[Rule 2]`
-- `[Rule 3]`
-- `[Rule 4]`
+- `[Rock beats Scissors, Scissors beats Paper, Paper beats Rock. If both pick the same gesture, it's a Draw and no HP is lost on either side.]`
+- `[Both you and the CPU start with 5 HP. Every time you lose a round, you lose 1 HP. First one to reach 0 HP loses the whole match.]`
+- `[You must choose your gesture in under 5 seconds when the round starts otherwise it resets the round.]`
+- `[The first to win 5 rounds wins the game.]`
 
 ---
 
