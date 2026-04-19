@@ -259,10 +259,10 @@ App interaction: a Python based game interface receives the input, runs the game
 
 | System Part | Type | What It Does |
 |---|---|---|
-| `[Button / Sensor / Switch / App Input]` | Input | `[Describe]` |
-| `[ESP32 / Controller]` | Processing | `[Describe]` |
-| `[LED / Motor / Servo / Buzzer / Display]` | Output | `[Describe]` |
-| `[Mechanical Assembly]` | Physical Action | `[Describe]` |
+| `[Flex Sensor ]` | Input | `[Detect finger bending to identify rock, paper, or scissors gestures]` |
+| `[ESP32]` | Processing | `[Reads sensor data, converts it into a gesture, and sends it to the game]` |
+| `[Laptop display]` | Output | `[Shows the game result, CPU choice, and updates lives]` |
+| `[Glove Assembly]` | Physical Action | `[Allows the player to perform hand gestures that control the game]` |
 
 ---
 
@@ -317,13 +317,16 @@ Check all that apply.
 - [ ] Wheels
 - [ ] Sliders
 - [ ] Levers
-- [ ] Not applicable
+- [✅] Not applicable
 
 ## 8.2 Mechanical Description
 Describe the mechanism and what it is meant to do.
 
 **Response:**  
-`[Write here]`
+`[The mechanism consists of a wearable glove fitted with flex sensors that bend along with the player’s fingers. These sensors measure the degree of bending and 
+send analog signals to the ESP32. The ESP32 processes this data to recognize specific hand gestures such as rock, paper, or scissors and transmits the 
+identified gesture to the game running on the laptop. The purpose of this mechanism is to convert physical hand movements into digital inputs, 
+allowing the player to control the game in a natural and interactive way.]`
 
 ## 8.3 Motion Planning
 If something moves, explain:
@@ -334,7 +337,15 @@ If something moves, explain:
 - what could go wrong.
 
 **Response:**  
-`[Write here]`
+`[what moves: the player’s fingers move while wearing the glove, causing the flex sensors to bend
+
+what causes the movement: the player intentionally bends or straightens their fingers to form rock, paper, or scissors gestures
+
+how far it moves: the fingers move through their natural range of motion, from fully straight to fully bent
+
+how fast it moves: the movement speed depends on the player, but it is usually quick and within a fraction of a second for each gesture
+
+what could go wrong: incorrect gesture detection due to improper finger positioning, sensor inaccuracies, loose connections, or delay in transmitting data to the game]`
 
 ## 8.4 Simulation / CAD / Animation Before Making
 If your project includes mechanical motion, document the digital planning before fabrication.
