@@ -65,7 +65,7 @@ By the final review, this README should clearly show:
 `[Enter the title of your project]`
 
 ## 1.4 One-Line Pitch
-`[Describe your project in one sentence]`
+`[A fast, fun Rock-Paper-Scissors game where you challenge a smart CPU that keeps you guessing every round.]`
 
 ## 1.5 Expanded Project Idea
 In 1–2 paragraphs, explain:
@@ -75,7 +75,7 @@ In 1–2 paragraphs, explain:
 - what technologies are involved.
 
 **Response:**  
-`[Write here]`
+`[Our project is an interactive Rock–Paper–Scissors game where the player competes against a CPU using a sensor-based glove that converts real hand gestures into in-game moves, creating a playful experience that blends physical action with a digital interface. Instead of clicking buttons, players use natural gestures, making the interaction feel more immersive and intuitive while adding a layer of curiosity and novelty since the glove actively “reads” the hand. This makes the game fun and satisfying through direct control, engaging through its unpredictability, and competitive as the CPU responds dynamically each round. The system is built using Python with Pygame for the interface and NumPy for handling logic, while an ESP32 running MicroPython processes flex sensor data from the glove and connects the physical input to the digital game.]`
 
 ---
 
