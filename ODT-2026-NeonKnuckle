@@ -58,7 +58,7 @@ By the final review, this README should clearly show:
 
 | Name | Primary Role | Secondary Role | Strengths Brought to the Project |
 |---|---|---|---|
-| `[Yagya Thakur]` | `[Hardware & Electronics]` | `[Game Development]` | `[Circuit design, ESP32 firmware, Python game programming]` |
+| `[Yagya Thakur]` | `[Hardware & Electronics]` | `[Game Development]` | `[Circuit design, ESP32 firmware, Python game programming, project assembly]` |
 | `[Ananya Gupta]` | `[Hardware & Electronics]` | `[Game Development]` | `[Circuit design, sensor integration, project assembly]` |
 
 ## 1.3 Project Title
@@ -259,7 +259,7 @@ App interaction: a Python based game interface receives the input, runs the game
 
 | System Part | Type | What It Does |
 |---|---|---|
-| `[Flex Sensor ]` | Input | `[Detect finger bending to identify rock, paper, or scissors gestures]` |
+| `[Flex Sensor and Touch Sensor ]` | Input | `[Detect finger bending to identify rock, paper, or scissors gestures]` |
 | `[ESP32]` | Processing | `[Reads sensor data, converts it into a gesture, and sends it to the game]` |
 | `[Laptop display]` | Output | `[Shows the game result, CPU choice, and updates lives]` |
 | `[Glove Assembly]` | Physical Action | `[Allows the player to perform hand gestures that control the game]` |
@@ -352,14 +352,14 @@ If your project includes mechanical motion, document the digital planning before
 
 | Tool Used | File / Link | What Was Tested |
 |---|---|---|
-| `[Fusion 360 / Tinkercad / other]` | `[Link or screenshot]` | `[What did you validate?]` |
-| `[Python / Pygame]` | `[Link or screenshot]` | `[What did you validate?]` |
+| `[Fusion 360 / Tinkercad / other]` | `[N/A]` | `[N/A]` |
+| `[tool]` | `[N/A]` | `[N/A]` |
 
 ## 8.5 Changes After Digital Testing
 What changed after the CAD, animation, or simulation stage?
 
 **Response:**  
-`[Write here]`
+`[N/A]`
 
 ---
 
@@ -370,8 +370,8 @@ What changed after the CAD, animation, or simulation stage?
 | Component | Quantity | Purpose |
 |---|---:|---|
 | `[ESP32]` | `1` | `[Main controller]` |
-| `[Component]` | `[Qty]` | `[Purpose]` |
-| `[Component]` | `[Qty]` | `[Purpose]` |
+| `[Flex Sensors, Touch sensors]` | `[3]` | `[Input, Gesture detection]` |
+| `[10kohm Resistors]` | `[3]` | `[Only used if Flex sensors are being used to form a voltage divider circuit, converting the sensor's changing resistance into a measurable voltage change for the ESP32.]` |
 
 ## 9.2 Wiring Plan
 Describe the main electrical connections.
@@ -464,28 +464,28 @@ Examples:
 - displaying data.
 
 **Response:**  
-`[Write here]`
+`[N/A]`
 
 ## 11.3 App Features
 
 | Feature | Purpose |
 |---|---|
-| `[Bluetooth connect button]` | `[Purpose]` |
-| `[Score display]` | `[Purpose]` |
-| `[Control button / slider / label]` | `[Purpose]` |
+| `[Bluetooth connect button]` | `[N/A]` |
+| `[Score display]` | `[N/A]` |
+| `[Control button / slider / label]` | `[N/A]` |
 
 ## 11.4 UI Mockup
 Insert a sketch or screenshot of the app interface.
 
 **Insert image below:**  
-`[Upload image and link here]`
+`[N/A]`
 
 ## 11.5 App Screen Flow
 
-1. `[Step 1]`
-2. `[Step 2]`
-3. `[Step 3]`
-4. `[Step 4]`
+1. `[N/A]`
+2. `[N/A]`
+3. `[N/A]`
+4. `[N/A]`
 
 ---
 
