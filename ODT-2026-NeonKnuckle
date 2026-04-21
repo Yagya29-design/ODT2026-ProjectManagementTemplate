@@ -52,17 +52,17 @@ By the final review, this README should clearly show:
 # 1. Team Identity
 
 ## 1.1 Studio / Group Name
-`[Enter your group name]`
+`[NeonKnuckle]`
 
 ## 1.2 Team Members
 
 | Name | Primary Role | Secondary Role | Strengths Brought to the Project |
 |---|---|---|---|
-| `[Student 1]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
-| `[Student 2]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
+| `[Yagya Thakur]` | `[Hardware & Electronics]` | `[Game Development]` | `[Circuit design, ESP32 firmware, Python game programming]` |
+| `[Ananya Gupta]` | `[Hardware & Electronics]` | `[Game Development]` | `[Circuit design, sensor integration, project assembly]` |
 
 ## 1.3 Project Title
-`[Enter the title of your project]`
+`[NeonKnuckle — A Gesture Controlled Rock Paper Scissors Fight Game]`
 
 ## 1.4 One-Line Pitch
 `[A fast, fun Rock-Paper-Scissors game where you challenge a smart CPU that keeps you guessing every round.]`
@@ -353,7 +353,7 @@ If your project includes mechanical motion, document the digital planning before
 | Tool Used | File / Link | What Was Tested |
 |---|---|---|
 | `[Fusion 360 / Tinkercad / other]` | `[Link or screenshot]` | `[What did you validate?]` |
-| `[Tool]` | `[Link or screenshot]` | `[What did you validate?]` |
+| `[Python / Pygame]` | `[Link or screenshot]` | `[What did you validate?]` |
 
 ## 8.5 Changes After Digital Testing
 What changed after the CAD, animation, or simulation stage?
@@ -699,7 +699,14 @@ Include:
 - revisions.
 
 **Response:**  
-`[Write here]`
+`[We began by testing three flex sensors on a breadboard, each wired in a voltage divider circuit with a 10kΩ resistor connected to GPIO 34, 35, and 32 on the ESP32.
+After running ADC readings in Thonny, we encountered persistent issues — the resistance difference between bent and straight was too inconsistent to classify gestures reliably, 
+and soldering wires directly to the sensor pins caused heat damage to two sensors. Due to these issues, we switched to the ESP32's built-in capacitive touch pins, 
+which eliminated voltage dividers and calibration entirely. Touch pins detect finger contact directly and produce a clean binary signal, 
+making gesture classification far more reliable. For the glove, we attached conductive wires to the index, middle, and ring fingers connected to GPIO pins 4, 15, and 13.
+Wires were routed along the back of the hand and gathered at the wrist with a cable tie. The ESP32 and breadboard were kept on the desk during testing, 
+connected via longer jumper wires to allow free finger movement. The final gesture logic was simplified compared to the original plan — 
+Rock is detected by touching the index, ring, and middle fingers, Scissors by touching only the ring finger, and Paper by touching nothing.]`
 
 ## 17.2 Build Photos
 Add photos throughout the project.
@@ -723,9 +730,9 @@ Example:
 
 | Version | Date | What Changed | Why |
 |---|---|---|---|
-| `v1` | `[Date]` | `[Describe]` | `[Reason]` |
-| `v2` | `[Date]` | `[Describe]` | `[Reason]` |
-| `v3` | `[Date]` | `[Describe]` | `[Reason]` |
+| `v1` | `[10 Apr 2025]` | `[MockSerial keyboard-controlled game, no hardware]` | `[Initial software prototype to validate game logic and UI before touching any hardware]` |
+| `v2` | `[14 Apr 2025]` | `[3 flex sensors wired to ESP32 via voltage dividers, game reads real serial]` | `[First hardware integration attempt — revealed persistent calibration issues and sensor damage from soldering]` |
+| `v3` | `[17 Apr 2025]` | `[Switched to ESP32 capacitive touch pins, simplified gesture logic, full glove assembly]` | `[Flex sensors proved unreliable due to inconsistent resistance change and heat damage — touch sensors gave clean binary signal with no calibration needed]` |
 
 ---
 
@@ -735,23 +742,30 @@ Example:
 Describe the final version of your project.
 
 **Response:**  
-`[Write here]`
+`[NeonKnuckle is a gesture-controlled Rock Paper Scissors fight game built using an ESP32 microcontroller, capacitive touch sensors embedded in a glove, 
+ and a fullscreen Python Pygame application running on a laptop. The player wears the glove and makes hand gestures to play against the CPU. 
+ Touch wires on the index, middle and ring fingers detect gestures which are sent over USB serial to the game. 
+ The game features a cinematic pixel art UI with health bars, a countdown timer, particle explosions, retro sound effects and a full match system where the first 
+ player to lose 5 rounds loses the match.]`
 
 ## 18.2 What Works Well
-- `[Point 1]`
-- `[Point 2]`
-- `[Point 3]`
+- `[Capacitive touch sensors detect gestures instantly and reliably with no calibration needed]`
+- `[The game UI is fully functional with smooth animations, sounds, health bars and match logic]`
+- `[The serial communication between ESP32 and the game is stable and responsive]`
 
 ## 18.3 What Still Needs Improvement
-- `[Point 1]`
-- `[Point 2]`
-- `[Point 3]`
+- `[The glove wiring is still temporary with jumper wires and tape, a cleaner permanent solution with soldered connections and proper strain relief would make it more durable]`
+- `[The ESP32 and breadboard are currently kept on the desk rather than mounted on the glove, a fully wireless version using BLE and a powerbank would make it truly wearable]`
+- `[The touch sensors occasionally trigger from static or accidental contact, adding a debounce delay or requiring the gesture to be held for a minimum duration would improve accuracy]`
 
 ## 18.4 What Changed From the Original Plan
 How did the project change from the initial idea?
 
 **Response:**  
-`[Write here]`
+`[The original plan used flex sensors in a voltage divider circuit to detect finger bending. This was abandoned after persistent calibration issues and heat damage 
+ from soldering made the sensors unreliable. The project pivoted to capacitive touch sensors using the ESP32's built-in touch pins, which proved far simpler and 
+ more reliable. The wireless Bluetooth approach was also planned but not implemented in the final version due to time constraints.
+ The project currently uses USB serial communication instead.]`
 
 ---
 
@@ -763,7 +777,13 @@ What slowed you down?
 How well did you manage time, tasks, and responsibilities?
 
 **Response:**  
-`[Write here]`
+`[Our team worked well together on splitting the hardware and software sides of the project. Yagya focused heavily on the game code and ESP32 firmware while
+ Ananya assisted with the physical glove assembly and sensor testing. We communicated well when things broke and made decisions quickly.
+ The pivot from flex sensors to touch sensors happened in one session once we agreed the flex approach was not going to work reliably in time. What slowed us down 
+most was the flex sensor troubleshooting. We spent a significant amount of time trying to calibrate thresholds, rewiring circuits and replacing damaged sensors 
+ before realising the fundamental problem was the soldering damaging the sensors. In hindsight, we should have tested the sensors more thoroughly before committing 
+to soldering. Time management was reasonable overall. The software was completed well ahead of the hardware, which gave us flexibility to iterate on the game 
+while the hardware was being sorted. The final integration came together quickly once we switched to touch sensors.]`
 
 ## 19.2 Technical Reflection
 What did you learn about:
@@ -774,7 +794,13 @@ What did you learn about:
 - integration?
 
 **Response:**  
-`[Write here]`
+`[On the electronics side, we learned how voltage dividers work and how ADC pins on the ESP32 read analogue signals. We also learned the hard way that flex sensors 
+ are heat sensitive and that soldering directly to thin sensor pins requires speed and precision. Switching to capacitive touch taught us that sometimes a simpler 
+ solution is the better solution. The ESP32's built-in touch pins eliminated an entire layer of complexity that was causing us problems. On the coding side, we learned
+ how serial communication works between a microcontroller and a Python application, how to generate sound programmatically using numpy without any audio files, 
+ and how to build a full-screen game loop in Pygame with multiple states, animations and particle effects. We also learned how MicroPython differs from standard 
+ Python and how to save and run code on embedded hardware using Thonny.On the integration side, we learned how important it is to test each component in isolation 
+ before combining them. Every time we tried to jump ahead and combine untested parts, we ran into problems that were hard to debug.]`
 
 ## 19.3 Design Reflection
 What did you learn about:
@@ -786,13 +812,24 @@ What did you learn about:
 - iteration?
 
 **Response:**  
-`[Write here]`
+`[Designing for play taught us that the interaction needs to feel natural and immediate. The original flex sensor approach had a delay and inconsistency that broke
+ the flow of the game. Players would make a gesture, and nothing would happen, which felt broken. The touch sensor approach fixed this instantly and made the game feel
+ responsive and satisfying. We learned that clarity in feedback is essential. Adding the Rock... Paper... Scissors... Shoot! 
+ countdown made the game immediately understandable to anyone watching without any explanation needed. The health bars, particle explosions and sound effects all 
+ reinforced what was happening on screen and made wins and losses feel impactful. Physical interaction taught us that wearable tech needs to be comfortable and 
+ unobtrusive. The glove felt natural to wear, and the touch wires did not interfere with hand movement. We iterated on the sensor placement multiple times to find 
+ positions that detected gestures reliably without false triggers. Player understanding improved significantly through playtesting. 
+ We realised early on that players needed visual feedback during the timer showing their locked-in gesture, otherwise they were unsure if their input had registered.]`
 
 ## 19.4 If You Had One More Week
 What would you improve next?
 
 **Response:**  
-`[Write here]`
+`[With one more week, we would implement the wireless Bluetooth version using the ESP32's BLE capabilities and a small powerbank mounted on the wrist. 
+ This would make the glove fully untethered and wearable anywhere without needing a USB cable running to the laptop.
+ We would also clean up the glove wiring by replacing the jumper wires and tape with properly soldered connections, heat shrink tubing and a neat cable channel along
+ the back of the glove. Finally, we would add the OLED screen on the glove showing the player's remaining lives in real time so they would not need to look at the 
+ laptop screen during play.]`
 
 ---
 
