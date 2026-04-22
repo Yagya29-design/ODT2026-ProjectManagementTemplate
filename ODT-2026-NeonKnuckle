@@ -59,7 +59,7 @@ By the final review, this README should clearly show:
 | Name | Primary Role | Secondary Role | Strengths Brought to the Project |
 |---|---|---|---|
 | `[Yagya Thakur]` | `[Hardware & Electronics]` | `[Game Development]` | `[Circuit design, ESP32 firmware, Python game programming, project assembly]` |
-| `[Ananya Gupta]` | `[Hardware & Electronics]` | `[Game Development]` | `[Circuit design, sensor integration, project assembly]` |
+| `[Ananya Gupta]` | `[Hardware & Electronics]` | `[Game Development]` | `[Circuit design, ESP32 firmware, sensor integration, project assembly]` |
 
 ## 1.3 Project Title
 `[NeonKnuckle — A Gesture Controlled Rock Paper Scissors Fight Game]`
@@ -556,26 +556,32 @@ Include:
 
 | Task ID | Task | Owner | Estimated Hours | Deadline | Dependency | Status |
 |---|---|---|---:|---|---|---|
-| T1 | `[Finalize concept]` | `[Name]` | `2` | `[Date]` | `None` | `To Do` |
-| T2 | `[Complete BOM]` | `[Name]` | `1` | `[Date]` | `T1` | `To Do` |
-| T3 | `[Test electronics]` | `[Name]` | `2` | `[Date]` | `T1` | `To Do` |
-| T4 | `[Build structure]` | `[Name]` | `4` | `[Date]` | `T1` | `To Do` |
-| T5 | `[Write control code]` | `[Name]` | `4` | `[Date]` | `T3` | `To Do` |
-| T6 | `[Integrate system]` | `[Name]` | `4` | `[Date]` | `T4, T5` | `To Do` |
-| T7 | `[Playtest]` | `[Name]` | `2` | `[Date]` | `T6` | `To Do` |
-| T8 | `[Refine and document]` | `[Name]` | `3` | `[Date]` | `T7` | `To Do` |
+| T1 | `[Finalize concept and gesture logic]` | `[both]` | `2` | `[week2]` | `None` | `competed` |
+| T2 | `[Complete BOM and purchase components]` | `[both]` | `1` | `[week2]` | `T1` | `completed` |
+| T3 | `[Test single flex sensor with ESP32]` | `[both]` | `2` | `[week2]` | `T1` | `completed` |
+| T4 | `[Wire all 3 flex sensors and attempt calibration]` | `[both]` | `3` | `[week3]` | `T3` | `unsuccessful outcome` |
+| T5 | `[Write ESP32 gesture classification firmware]` | `[both]` | `3` | `[week3]` | `T3` | `completed` |
+| T6 | `[Integrate serial communication with Python game]` | `[both]` | `2` | `[week3]` | `T5` | `completed` |
+| T7 | `[Evaluate sensor reliability and identify issues]` | `[both]` | `2` | `[week4]` | `T4` | `completed` |
+| T8 | `[Design alternative input system (touch-based)]` | `[both]` | `2` | `[week4]` | `T7` | `completed` |
+| T9 | `[Implement touch input using jumper wires]` | `[both]` | `2` | `[week4]` | `T8` | `completed` |
+| T10 | `[Modify firmware for touch-based gesture detection]` | `[week4]` | `2` | `[Date]` | `T9` | `completed` |
+| T11 | `[Attach wiring system to glove]` | `[both]` | `2` | `[week4]` | `T9` | `completed` |
+| T12 | `[Full system integration test (glove + game)]` | `[both]` | `3` | `[week4]` | `T10,11` | `completed` |
+| T13 | `[Playtesting with classmates]` | `[both]` | `2` | `[week4]` | `T12` | `completed` |
+| T14 | `[Final refinements and documentation]` | `[both]` | `3` | `[week4]` | `T13` | `completed` |
+
 
 ## 13.3 Responsibility Split
 
 | Area | Main Owner | Support Owner |
 |---|---|---|
-| Concept and gameplay | `[Name]` | `[Name]` |
-| Electronics | `[Name]` | `[Name]` |
-| Coding | `[Name]` | `[Name]` |
-| App | `[Name]` | `[Name]` |
-| Mechanical build | `[Name]` | `[Name]` |
-| Testing | `[Name]` | `[Name]` |
-| Documentation | `[Name]` | `[Name]` |
+| Concept and gameplay | `[yagya]` | `[ananya]` |
+| Electronics | `[ananya]` | `[yagya]` |
+| Coding | `[yagya(game) and ananya(esp32 firmware)]` | 
+| Mechanical build | `[ananya]` | `[yagya]` |
+| Testing | `[yagya]` | `[ananya]` |
+| Documentation | `[ananya]` | `[yagya]` |
 
 ---
 
@@ -621,10 +627,10 @@ Expected outcomes:
 
 | Week | Planned Goal | What Actually Happened | What Changed | Next Steps |
 |---|---|---|---|---|
-| Week 1 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-| Week 2 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-| Week 3 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-| Week 4 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
+| Week 1 | `[Finalize concept, order parts, test single sensor]` | `[Concept finalized; flex sensors ordered; tested one sensor on breadboard but readings were inconsistent]` | `[Realized early that sensor readings were unstable and noisy]` | `[Continue testing with multiple sensors; explore calibration methods]` |
+| Week 2 | `[All sensors calibrated, firmware written, game connected]` | `[Wired all three flex sensors and attempted calibration; wrote basic firmware; readings fluctuated and gestures misclassified frequently]` | `[Decided that flex sensors were unreliable for consistent gameplay]` | `[Explore alternative input methods (touch-based system); pause further flex sensor work]` |
+| Week 3 | `[Glove assembled, full integration working]` | `[Switched to touch-based input using jumper wires; attached wires to glove; achieved stable gesture detection; integrated with game]` | `[Major pivot from flex sensors to touch input system]` | `[Refine gesture mapping; improve wiring layout; begin playtesting]` |
+| Week 4 | `[Playtesting, polish, documentation]` | `[Conducted playtesting with classmates; identified minor usability issues; completed documentation and final build]` | `[Added small improvements like clearer gesture mapping and stability checks]` | `[Final refinements and preparation for presentation/demo]` |
 
 ---
 
@@ -634,16 +640,17 @@ Expected outcomes:
 
 | Risk | Type | Likelihood | Impact | Mitigation Plan | Owner |
 |---|---|---|---|---|---|
-| `[Example: Bluetooth disconnects]` | `Technical` | `Medium` | `High` | `[Fallback interaction / simplify connection flow]` | `[Name]` |
-| `[Example: Structure breaks during play]` | `Mechanical` | `Medium` | `High` | `[Reinforce joints / change material]` | `[Name]` |
-| `[Risk]` | `[Technical / Material / Time / Gameplay]` | `[Low/Medium/High]` | `[Low/Medium/High]` | `[Plan]` | `[Name]` |
-| `[Risk]` | `[Type]` | `[Low/Medium/High]` | `[Low/Medium/High]` | `[Plan]` | `[Name]` |
+| `[Flex sensor readings are noisy or inconsistent]` | `Technical` | `high` | `High` | `[Attempt averaging and recalibration; if unreliable, switch to alternative input method (touch-based system)]` | `[ananya]` |
+| `[ESP32 COM port conflicts with Thonny during game]` | `technical` | `high` | `High` | `[Always close Thonny fully before running game; document clearly]` | `[yagya]` |
+| `[Gesture misclassification at sensor threshold boundary]` | `[Technical]` | `[High]` | `[High]` | `[Increase threshold gap; test across users; eventually replaced with discrete touch input system]` | `[ananya]` |
+| `[Sensors detach from glove during play]` | `[mechnical]` | `[Low]` | `[medium]` | `[Use strong fabric glue + reinforcement]` | `[both]` |
 
 ## 15.2 Biggest Unknown Right Now
 What is the single biggest uncertainty in your project at this stage?
 
 **Response:**  
-`[Write here]`
+`[The biggest uncertainty initially was the reliability and consistency of flex sensor readings across different hand sizes and grip styles. During testing, this concern proved significant — sensor values fluctuated even when fingers were held still, and thresholds were difficult to standardize.
+This led to a key design pivot: replacing flex sensors with a touch-based jumper wire system, which provided more stable and binary input signals. The current uncertainty lies in ensuring that touch inputs remain distinct and do not accidentally trigger due to unintended finger contact.]`
 
 ---
 
@@ -653,34 +660,37 @@ What is the single biggest uncertainty in your project at this stage?
 
 | What Needs Testing | How You Will Test It | Success Condition |
 |---|---|---|
-| `[Bluetooth connection]` | `[Method]` | `[What counts as success?]` |
-| `[Mechanism movement]` | `[Method]` | `[What counts as success?]` |
-| `[Sensor behavior]` | `[Method]` | `[What counts as success?]` |
-| `[App communication]` | `[Method]` | `[What counts as success?]` |
+| `[Flex sensor ADC readings]` | `[Use Thonny serial monitor, compare bent vs straight values]` | `[Clear difference (>500 ADC units) — Not achieved consistently]` |
+| `[Touch input detection]` | `[Connect jumper wires and manually trigger contact points for each gesture]` | `[Each gesture produces consistent and distinct output]` |
+| `[Gesture classification accuracy]` | `[Perform each gesture 10 times]` | `[At least 9/10 correct classifications]` |
+| `[Serial transmission to game]` | `[Run game with ESP32 connected]` | `[Game responds within 1 second]` |
+| `[Full game loop]` | `[Play full games]` | `[No crashes; smooth gameplay]` |
 
 ## 16.2 Playtesting Plan
 
 | Question | How You Will Check |
 |---|---|
-| Do players understand what to do? | `[Method]` |
-| Is the interaction satisfying? | `[Method]` |
-| Do players want another turn? | `[Method]` |
-| Is the challenge balanced? | `[Method]` |
-| Is the response clear and immediate? | `[Method]` |
+| Do players understand what to do? | `[Two classmates will be asked to use the glove without any prior explanation. I will observe whether they immediately attempt hand gestures or hesitate, and note any questions they ask before starting.]` |
+| Is the interaction satisfying? | `[I will observe players’ reactions during gameplay, especially during the reveal animations and hit effects. After the session, I will ask them if the interaction felt responsive and engaging.]` |
+| Do players want another turn? | `[After GAME OVER, I will observe whether players choose to play again without prompting or hand the glove back. I will also ask if they would like to try another round.]` |
+| Is the challenge balanced? | `[Each player will play at least 10 rounds. I will track win/loss outcomes to check if the CPU wins approximately 50% of the time, ensuring fair gameplay.]` |
+| Is the response clear and immediate? | `[I will observe if players hesitate, repeat gestures, or look confused after making a gesture. I will also ask if they noticed any delay between input and screen response.]` |
 
 ## 16.3 Testing and Debugging Log
 
 | Date | Problem Found | Type | What You Tried | Result | Next Action |
 |---|---|---|---|---|---|
-| `[Date]` | `[Describe issue]` | `[Technical / Mechanical / UI / Gameplay]` | `[What you did]` | `[Worked / Partly / Failed]` | `[Next step]` |
-| `[Date]` | `[Describe issue]` | `[Type]` | `[What you did]` | `[Result]` | `[Next step]` |
+| `[19.04.2026]` | `[Flex sensor readings inconsistent — not fluctuating even when finger was bent]` | `[Technical]` | `[Averaging multiple readings; recalibration]` | `[Failed]` | `[Explore alternative input method]` |
+| `[20.04.2026]` | `[Gesture misclassification due to unreliable sensor thresholds]` | `[Technical]` | `[Adjusted thresholds; added stability checks]` | `[Partly worked but inconsistent]` | `[Abandoned flex sensors]` |
+| `[20.04.2026]` | `[Implemented touch-based input using jumper wires]` | `[Technical]` | `[Designed contact-based gesture system]` | `[Worked — stable detection achieved]` | `[Refine mapping]` |
+| `[20.04.2026]` | `[Game freeze after GAME OVER due to sound generation]` | `[Technical]` | `[Pre-generated sounds at startup]` | `[worked]` | `[no further action]` |
 
 ## 16.4 Playtesting Notes
 
 | Tester | What They Did | What Confused Them | What They Enjoyed | What You Will Change |
 |---|---|---|---|---|
-| `[Peer / friend / classmate]` | `[Observation]` | `[Observation]` | `[Observation]` | `[Action]` |
-| `[Peer / friend / classmate]` | `[Observation]` | `[Observation]` | `[Observation]` | `[Action]` |
+| `[classmate]` | `[Played multiple rounds using touch-based glove]` | `[Initially unsure where to touch for gestures]` | `[Said it felt interactive and “game-like”]` | `[Add visual indicator for touch input]` |
+| `[classmate]` | `[Played full game]` | `[Needed clearer mapping of gestures]` | `[Enjoyed countdown + effects]` | `[Add tutorial screen]` |
 
 ---
 
@@ -699,14 +709,10 @@ Include:
 - revisions.
 
 **Response:**  
-`[We began by testing three flex sensors on a breadboard, each wired in a voltage divider circuit with a 10kΩ resistor connected to GPIO 34, 35, and 32 on the ESP32.
-After running ADC readings in Thonny, we encountered persistent issues — the resistance difference between bent and straight was too inconsistent to classify gestures reliably, 
-and soldering wires directly to the sensor pins caused heat damage to two sensors. Due to these issues, we switched to the ESP32's built-in capacitive touch pins, 
-which eliminated voltage dividers and calibration entirely. Touch pins detect finger contact directly and produce a clean binary signal, 
-making gesture classification far more reliable. For the glove, we attached conductive wires to the index, middle, and ring fingers connected to GPIO pins 4, 15, and 13.
-Wires were routed along the back of the hand and gathered at the wrist with a cable tie. The ESP32 and breadboard were kept on the desk during testing, 
-connected via longer jumper wires to allow free finger movement. The final gesture logic was simplified compared to the original plan — 
-Rock is detected by touching the index, ring, and middle fingers, Scissors by touching only the ring finger, and Paper by touching nothing.]`
+`[We began by testing flex sensors individually using a voltage divider circuit with the ESP32. While initial readings showed variation between bent and straight positions, the values were inconsistent and unstable during repeated use. Even after averaging readings and recalibrating thresholds, the sensors failed to produce reliable gesture classification.
+Due to these limitations, we pivoted to a touch-based input system using jumper wires. Conductive wires were placed along the fingers of the glove such that specific finger contacts would complete circuits corresponding to Rock, Paper, and Scissors.
+This approach eliminated ambiguity in sensor readings and provided clear binary inputs. The wires were taped along the glove and routed to the ESP32 via jumper connections. The ESP32 and breadboard were kept off-glove to maintain flexibility and reduce strain.
+This iteration significantly improved system reliability and responsiveness.]`
 
 ## 17.2 Build Photos
 Add photos throughout the project.
