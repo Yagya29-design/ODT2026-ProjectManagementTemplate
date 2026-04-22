@@ -495,9 +495,9 @@ Insert a sketch or screenshot of the app interface.
 
 | Item | Quantity | In Kit? | Need to Buy? | Estimated Cost | Material / Spec | Why This Choice? |
 |---|---:|---|---|---:|---|---|
-| `[ESP32]` | `1` | `Yes` | `No` | `0` | `[Spec]` | `[Reason]` |
-| `[Item]` | `[Qty]` | `[Yes/No]` | `[Yes/No]` | `[Cost]` | `[Spec]` | `[Reason]` |
-| `[Item]` | `[Qty]` | `[Yes/No]` | `[Yes/No]` | `[Cost]` | `[Spec]` | `[Reason]` |
+| `[ESP32]` | `1` | `Yes` | `yes` | `150rs` | `[ESP32 WROOM-32, built-in WiFi and capacitive touch pins]` | `[Has built-in capacitive touch pins, eliminating need for external sensor modules. Built-in serial over USB makes game communication simple]` |
+| `[Flex sensors]` | `[3]` | `[Yes]` | `[Yes]` | `[199rs for 1]` | `[2.2 inch resistive flex sensor]` | `[Originally chosen for analog bend detection. Later replaced by capacitive touch due to calibration issues and heat damage from soldering]` |
+| `[Resistors]` | `[3]` | `[Yes]` | `[Yes]` | `[10rs]` | `[10kΩ resistors for voltage divider]` | `[Required for flex sensor voltage divider circuit. No longer needed after switch to touch sensors but kept as backup]` |
 
 ## 12.2 Material Justification
 Explain why you selected your main materials and components.
@@ -509,31 +509,44 @@ Examples:
 - Why bearing instead of a plain shaft hole?
 
 **Response:**  
-`[Write here]`
+`[The ESP32 was chosen as the core microcontroller because it has built-in capacitive touch pins, which directly solved our gesture detection problem without 
+ requiring any additional sensor modules or analog calibration. Its native USB serial support also made communicating with the Python game on the laptop 
+ straightforward. We initially chose flex sensors because they are the conventional choice for finger bend detection in glove projects. However, after persistent 
+ calibration difficulties and heat damage caused by soldering, we pivoted to the ESP32's built-in capacitive touch pins. This was a simpler and more reliable 
+ solution — touch pins give a clean binary signal requiring no threshold tuning or voltage dividers. A thin glove was chosen over a rigid housing because the project
+ needs to be wearable and allow full natural hand movement. A rigid structure would restrict the fingers and make gestures uncomfortable to perform. 
+ The thin material also makes it easy to attach conductive wires and route cables neatly along the back of the hand. Jumper wires and a breadboard were used 
+ throughout instead of a custom PCB because they allow rapid changes during prototyping. Every time a sensor was swapped, or a pin changed, 
+ the breadboard made reconfiguration a matter of seconds rather than requiring new solder joints.]`
 
 ## 12.3 Items to Purchase Separately
 
 | Item | Why Needed | Purchase Link | Latest Safe Date to Procure | Status |
 |---|---|---|---|---|
-| `[Item]` | `[Reason]` | `[Link]` | `[Date]` | `[Pending / Ordered / Received]` |
-| `[Item]` | `[Reason]` | `[Link]` | `[Date]` | `[Pending / Ordered / Received]` |
+| `[OlED Screen]` | `[display]` | `[]` | `[17/4/2026]` | `[Pending]` |
+| `[N/A]` | `[N/A]` | `[N/A]` | `[N/A]` | `[N/A]` |
 
 ## 12.4 Budget Summary
 
 | Budget Item | Estimated Cost |
 |---|---:|
-| Electronics | `[Cost]` |
-| Mechanical parts | `[Cost]` |
-| Fabrication materials | `[Cost]` |
-| Purchased extras | `[Cost]` |
-| Contingency | `[Cost]` |
-| **Total** | `[Cost]` |
+| Electronics | `[597rs]` |
+| Mechanical parts | `[included in kit]` |
+| Fabrication materials | `[70rs]` |
+| Purchased extras | `[30rs]` |
+| Contingency | `[50rs]` |
+| **Total** | `[747rs]` |
 
 ## 12.5 Budget Reflection
 If your cost is too high, what can be simplified, removed, substituted, or shared?
 
 **Response:**  
-`[Write here]`
+`[The overall cost of this project was very low because most of the core electronics were available in the school kit. The ESP32, breadboard, resistors and jumper 
+ wires were all provided, which meant the only out-of-pocket costs were the glove, conductive wire and replacement sensors. The most expensive individual component 
+ was the flex sensor at 199rs per unit, and we purchased three of them. In hindsight, this was unnecessary since we ultimately switched to capacitive touch sensors , 
+ which are built directly into the ESP32 and cost nothing extra. If we were starting the project again, we would skip the flex sensors entirely and go straight to 
+ touch sensors, saving approximately 597rs. The project could be made even cheaper by using any spare fabric glove instead of buying one, and by using stripped 
+ copper wire from old electronics instead of buying fresh conductive wire. ]`
 
 ---
 
@@ -581,7 +594,7 @@ Include:
 | Coding | `[yagya(game) and ananya(esp32 firmware)]` | 
 | Mechanical build | `[ananya]` | `[yagya]` |
 | Testing | `[yagya]` | `[ananya]` |
-| Documentation | `[ananya]` | `[yagya]` |
+| Documentation | `[ananya(videography)]` | `[yagya(repositry)]` |
 
 ---
 
